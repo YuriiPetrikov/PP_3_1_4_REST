@@ -1,4 +1,4 @@
-package com.example.PP_3_1_3_Bootstrap;
+package com.example.PP_3_1_4_REST;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

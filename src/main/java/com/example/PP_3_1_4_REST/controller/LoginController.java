@@ -1,4 +1,4 @@
-package com.example.PP_3_1_3_Bootstrap.controller;
+package com.example.PP_3_1_4_REST.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

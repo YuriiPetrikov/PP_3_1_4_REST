@@ -1,4 +1,4 @@
-package com.example.PP_3_1_3_Bootstrap.model;
+package com.example.PP_3_1_4_REST.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
@@ -14,9 +14,9 @@ public class Role implements GrantedAuthority {
     @Column(name="name")
     private String name;
 
-    @Transient
+/*    @Transient
     @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
+    private Set<User> users;*/
 
     public Role() {
     }
@@ -42,13 +42,13 @@ public class Role implements GrantedAuthority {
         this.name = name;
     }
 
-    public Set<User> getUsers() {
+/*    public Set<User> getUsers() {
         return users;
     }
 
     public void setUsers(Set<User> users) {
         this.users = users;
-    }
+    }*/
 
     @Override
     public String getAuthority() {
@@ -60,12 +60,12 @@ public class Role implements GrantedAuthority {
         if (this == o) return true;
         if (!(o instanceof Role)) return false;
         Role role = (Role) o;
-        return Objects.equals(name, role.name) && Objects.equals(users, role.users);
+        return Objects.equals(name, role.name);// && Objects.equals(users, role.users);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, users);
+        return Objects.hash(name);//, users);
     }
 
     @Override

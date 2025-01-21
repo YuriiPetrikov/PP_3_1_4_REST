@@ -1,7 +1,9 @@
-package com.example.PP_3_1_3_Bootstrap.service;
+package com.example.PP_3_1_4_REST.service;
 
-import com.example.PP_3_1_3_Bootstrap.dao.UserDaoImp;
-import com.example.PP_3_1_3_Bootstrap.model.User;
+import com.example.PP_3_1_4_REST.dao.UserDaoImp;
+import com.example.PP_3_1_4_REST.model.User;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;

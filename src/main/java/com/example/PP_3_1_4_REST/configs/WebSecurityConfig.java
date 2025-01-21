@@ -1,4 +1,4 @@
-package com.example.PP_3_1_3_Bootstrap.configs;
+package com.example.PP_3_1_4_REST.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,6 +22,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeRequests()
+
+                //.antMatchers("/api/users/*").permitAll()
+                //.antMatchers("/api/*").permitAll()
+//                .antMatchers("/api/admin/**").hasRole("ADMIN")
+//                .antMatchers("/api/user/**").hasAnyRole("USER", "ADMIN")
+
                 .antMatchers("/login").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")

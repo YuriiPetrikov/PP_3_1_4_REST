@@ -1,4 +1,4 @@
-package com.example.PP_3_1_3_Bootstrap.configs;
+package com.example.PP_3_1_4_REST.configs;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;

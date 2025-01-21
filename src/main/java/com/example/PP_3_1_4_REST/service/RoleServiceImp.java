@@ -1,7 +1,7 @@
-package com.example.PP_3_1_3_Bootstrap.service;
+package com.example.PP_3_1_4_REST.service;
 
-import com.example.PP_3_1_3_Bootstrap.dao.RoleDaoImp;
-import com.example.PP_3_1_3_Bootstrap.model.Role;
+import com.example.PP_3_1_4_REST.dao.RoleDaoImp;
+import com.example.PP_3_1_4_REST.model.Role;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

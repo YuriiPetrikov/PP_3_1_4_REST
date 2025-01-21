@@ -1,9 +1,9 @@
-package com.example.PP_3_1_3_Bootstrap.init;
+package com.example.PP_3_1_4_REST.init;
 
-import com.example.PP_3_1_3_Bootstrap.model.Role;
-import com.example.PP_3_1_3_Bootstrap.model.User;
-import com.example.PP_3_1_3_Bootstrap.service.RoleServiceImp;
-import com.example.PP_3_1_3_Bootstrap.service.UserServiceImp;
+import com.example.PP_3_1_4_REST.model.Role;
+import com.example.PP_3_1_4_REST.model.User;
+import com.example.PP_3_1_4_REST.service.RoleServiceImp;
+import com.example.PP_3_1_4_REST.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

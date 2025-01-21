@@ -1,4 +1,4 @@
-package com.example.PP_3_1_3_Bootstrap.model;
+package com.example.PP_3_1_4_REST.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

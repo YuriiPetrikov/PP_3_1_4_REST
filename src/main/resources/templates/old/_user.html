@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -22,12 +22,15 @@
 <header class="contaner-fluid bg-dark">
   <div class="d-flex bd-highlight align-items-center">
     <div class="p-2 w-100 bd-highlight text-white">
-      <span class="font-weight-bold" id="userEmail"></span>
+      <span class="font-weight-bold" th:text="${user.getEmail()}"></span>
       with roles:
-      <span id="userRole"></span>
+      <th:block th:each="role : ${user.roles}">
+        <span th:utext="${#strings.substringAfter(role.name, 'ROLE_')}"></span>
+      </th:block>
     </div>
     <div class="p-2 flex-shrink-1 bd-highlight">
-      <a class="nav-link text-white-50" href="/logout">Logout</a>
+      <button form="logout" class="fs-5 pe-4 btn btn-dark text-white-50" type="submit">Logout</button>
+      <form id="logout" th:method="POST" th:action="@{/logout}"></form>
     </div>
   </div>
 </header>
@@ -45,7 +48,7 @@
             <div class="h4 m-0">About user</div>
           </div>
           <div class="card-body">
-            <table class="table border-top">
+            <table class="table table-striped border-top">
               <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -56,7 +59,19 @@
                 <th scope="col">Role</th>
               </tr>
               </thead>
-              <tbody  id="userInfo">
+              <tbody>
+              <tr>
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.firstName}"></td>
+                <td th:text="${user.lastName}"></td>
+                <td th:text="${user.age}"></td>
+                <td th:text="${user.email}"></td>
+                <td>
+                  <th:block th:each="role : ${user.roles}">
+                    <span th:utext="${#strings.substringAfter(role.name, 'ROLE_')}"></span>
+                  </th:block>
+                </td>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -65,12 +80,7 @@
     </div>
   </div>
 </div>
-<script src="/user.js"></script>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
 
